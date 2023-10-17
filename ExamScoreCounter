@@ -1,17 +1,14 @@
 import java.util.*;
 
 public class FirstProgram {
-
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter maximum: ");
 		double max = Double.parseDouble(input.nextLine());
-
 		try {
 			System.out.print("Enter exam points: ");
 			double points = Double.parseDouble(input.nextLine());
 			input.close();
-
 			if (points < 0 || points > max) {
 				System.out.println("Invalid exam points");
 			} else {
