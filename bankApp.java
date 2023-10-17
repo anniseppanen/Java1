@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-
 public class BankProgram {
 	private static Scanner input = new Scanner(System.in);
 	private static ArrayList<Account> accountList = new ArrayList<Account>();
@@ -29,11 +28,9 @@ public class BankProgram {
 			displayMenu();
 			choice = Integer.parseInt(input.nextLine());
 		}
-
 		System.out.println("\nThe program ends now. Bye!");
 		input.close();
 	}
-
 	private static void displayMenu() {
 		String line = "-----------------------------------------------------"
 				+ "---------------------------------------------------------------";
@@ -43,18 +40,14 @@ public class BankProgram {
 		System.out.println(line);
 		System.out.print("Enter your choice: ");
 	}
-
 	private static void listAccounts() {
 		System.out.println("\n*** Account list ***\n");
 		DecimalFormat twoDecimals = new DecimalFormat("0.00");
-
 		for (Account account : accountList) {
 			System.out.print("Number: " + account.getAccountNumber() + " | Balance: "
 					+ twoDecimals.format(account.getBalance()) + " euros\n");
 		}
-
 	}
-
 	private static void addAccount() {
 		System.out.print("\n*** Add an account ***\n");
 		Scanner input = new Scanner(System.in);
@@ -74,7 +67,6 @@ public class BankProgram {
 			System.out.println("\nAccount created successfully!");
 		}
 	}
-
 	private static Account findAccount(String accountNumber) {
 		for (Account account : accountList) {
 			if (account.getAccountNumber().equals(accountNumber)) {
@@ -83,16 +75,13 @@ public class BankProgram {
 		}
 		return null;
 	}
-
 	private static void depositMoney() {
 		System.out.print("\n*** Deposit money to an account ***\n");
 		Scanner input = new Scanner(System.in);
-
 		System.out.print("Enter account number: ");
 		String accountNumber = input.nextLine();
 		System.out.print("Enter the amount to be deposited: ");
 		double amount = Double.parseDouble(input.nextLine().replace(',', '.'));
-		
 		if(amount >= 0) {
 			Account account = findAccount(accountNumber);
 			account.deposit(amount);
@@ -102,7 +91,6 @@ public class BankProgram {
 		}
 
 	}
-
 	private static void withdrawMoney() {
 		System.out.print("\n*** Withdraw money from an account ***\n");
 		Scanner input = new Scanner(System.in);
@@ -123,7 +111,6 @@ public class BankProgram {
 			}
 		}
 	}
-
 	private static void deleteAccount() {
 		System.out.print("\n*** Delete an account ***\n");
 		Scanner input = new Scanner(System.in);
