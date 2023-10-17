@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FirstProgram {
+public class ExamScoreCounter {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter maximum: ");
